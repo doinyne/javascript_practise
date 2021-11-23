@@ -20,3 +20,27 @@ function myNumberSign(a) {
   else
     return 0
 }
+
+// the 'and' && operator 
+
+if (stopLight === 'green' && pedestrians === 0) {
+  console.log('Go!');
+} else {
+  console.log('Stop');
+}
+
+// the 'or' || operator
+
+if (day === 'Saturday' || day === 'Sunday') {
+  console.log('Enjoy the weekend!');
+} else {
+  console.log('Do some work.');
+}
+
+// the 'not' ! operator ( reverses or negates )
+
+let excited = true;
+console.log(!excited); // Prints false
+ 
+let sleepy = false;
+console.log(!sleepy); // Prints true
