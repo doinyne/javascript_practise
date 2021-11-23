@@ -119,3 +119,248 @@ if (favoritePhrase) {
 }
 
 This string is definitely empty.
+
+//falsy username output 
+
+let username = '';
+let defaultName;
+ 
+if (username) {
+  defaultName = username;
+} else {
+  defaultName = 'Stranger';
+}
+ 
+console.log(defaultName); // Prints: Stranger
+
+// short-hand code boolean condition, javascript assigns the truthy value to a variable if you use the || operator in your assignment 
+// Because || or statements check the left-hand condition first, the variable defaultName will be assigned the actual value of username if it is truthy, and it will be assigned the value of 'Stranger' if username is falsy.
+
+let username = '';
+let defaultName = username || 'Stranger';
+ 
+console.log(defaultName); // Prints: Stranger
+
+// the let tool is truthy so it prints 'marker'
+
+let tool = 'marker';
+
+// Use short circuit evaluation to assign  writingUtensil variable below:
+let writingUtensil = tool || 'pen';
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
+
+The marker is mightier than the sword.
+
+// the let tool is falsy (empty string) so it uses the || operator and assigns 'pen' to the variable writingUtensil
+
+let tool = '';
+
+// Use short circuit evaluation to assign  writingUtensil variable below:
+let writingUtensil = tool || 'pen';
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
+
+The pen is mightier than the sword.
+
+// a ternary operator heres an example of one in action 
+
+let isNightTime = true;
+ 
+if (isNightTime) {
+  console.log('Turn on the lights!');
+} else {
+  console.log('Turn off the lights!');
+}
+
+// is the same as 
+
+isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+
+/*
+In the example above:
+
+  The condition, isNightTime, is provided before the ?.
+  Two expressions follow the ? and are separated by a colon :.
+  If the condition evaluates to true, the first expression executes.
+  If the condition evaluates to false, the second expression executes.
+  Like if...else statements, ternary operators can be used for conditions which evaluate to true or false.
+*/
+
+//examples of ternary operators
+
+let isLocked = false;
+
+isLocked ? console.log('You will need a key to open the door.') : console.log('You will not need a key to open the door.');
+
+let isCorrect = true;
+
+isCorrect ? console.log('Correct!') :
+console.log('Incorrect!');
+
+let favoritePhrase = 'Love That!';
+
+favoritePhrase === 'Love That!' ? console.log('I love that!'): console.log("I don't love that!");
+
+//example of an if, else if and else statement 
+
+let stopLight = 'yellow';
+ 
+if (stopLight === 'red') {
+  console.log('Stop!');
+} else if (stopLight === 'yellow') {
+  console.log('Slow down.');
+} else if (stopLight === 'green') {
+  console.log('Go!');
+} else {
+  console.log('Caution, unknown!');
+}
+
+// another example of else if statements
+
+let season = 'summer';
+
+if (season === 'spring') {
+  console.log('It\'s spring! The trees are budding!');
+} else if (season === 'winter') {
+  console.log('It\'s winter! Everything is covered in snow.');
+} else if (season === 'fall') {
+  console.log('It\'s fall! Leaves are falling!');
+} else if (season === 'summer') {
+  console.log('It\'s sunny and warm because it\'s summer!');
+} else {
+  console.log('Invalid season.');
+}
+
+It's sunny and warm because it's summer!
+
+// In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
+
+let groceryItem = 'papaya';
+ 
+if (groceryItem === 'tomato') {
+  console.log('Tomatoes are $0.49');
+} else if (groceryItem === 'papaya'){
+  console.log('Papayas are $1.29');
+} else {
+  console.log('Invalid item');
+}
+
+// A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
+
+let groceryItem = 'papaya';
+ 
+switch (groceryItem) {
+  case 'tomato':
+    console.log('Tomatoes are $0.49');
+    break;
+  case 'lime':
+    console.log('Limes are $1.49');
+    break;
+  case 'papaya':
+    console.log('Papayas are $1.29');
+    break;
+  default:
+    console.log('Invalid item');
+    break;
+}
+ 
+'Papayas are $1.29'
+
+// my example
+
+let athleteFinalPosition = 'first place';
+
+switch (athleteFinalPosition) {
+  case 'first place':
+    console.log('You get the gold medal!');
+    break;
+  case 'second place':
+    console.log('You get the silver medal!');
+    break;
+  case 'third place':
+    console.log('You get the bronze medal!');
+    break;
+  default:
+    console.log('Loser');
+    break;
+}
+
+You get the gold medal!
+
+/*
+Way to go! Here are some of the major concepts for conditionals:
+
+An if statement checks a condition and will execute a task if that condition evaluates to true.
+
+if...else statements make binary decisions and execute different code blocks based on a provided condition.
+
+We can add more conditions using else if statements.
+
+Comparison operators, including <, >, <=, >=, ===, and !== can compare two values.
+
+The logical and operator, &&, or “and”, checks if both provided expressions are truthy.
+
+The logical operator ||, or “or”, checks if either provided expression is truthy.
+
+The bang operator, !, switches the truthiness and falsiness of a value.
+
+The ternary operator is shorthand to simplify concise if...else statements.
+
+A switch statement can be used to simplify the process of writing multiple else if statements. The break keyword stops the remaining cases from being checked and executed in a switch statement.
+*/
+
+// my magic 8 ball project 
+
+let userName = 'Dean';
+
+userName ? console.log(`Hello, ${userName}!`) : 
+console.log('Hello!');
+
+const userQuestion = 'Am I going to win?';
+
+console.log(`${userName} asked, ${userQuestion}`);
+
+const randomNumber = Math.floor(Math.random() * 8);
+
+let eightBall = '';
+
+switch (randomNumber) {
+  case 0:
+    eightBall = 'It is certain';
+    break;
+  case 1:
+    eightBall = 'It is decidedly so';
+    break;
+  case 2:
+    eightBall = 'Reply hazy try again';
+    break;
+  case 3:
+    eightBall = 'Cannot predict now';
+    break;
+  case 4:
+    eightBall = 'Do not count on it';
+    break;
+  case 5:
+    eightBall = 'My sources say no';
+    break;
+  case 6:
+    eightBall = 'Outlook not so good';
+    break;
+  case 7:
+    eightBall = 'Signs point to yes';
+    break;
+  default:
+    console.log('Sorry, can you repeat the question please?');
+    break;
+}
+
+console.log(`The magic ball answered ${eightBall}`)
+
+Hello, Dean!
+Dean asked, Am I going to win?
+The magic ball answered Signs point to yes
+
+//
+
+
