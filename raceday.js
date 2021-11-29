@@ -14,18 +14,15 @@ Youth registrants run at 12:30 pm (regardless of registration).
 But we didn’t plan for runners that are exactly 18! We’ll handle that by the end of the project.
 */
 
-let raceNumber = Math.floor(Math.random() * 1000);
-// Math.random() returns a value between 0 (inclusive) and 1 (exclusive). In order to make this set of numbers range from 0 (inclusive) to 1000 (exclusive) we can multiply the returned value by 1000. Finally, to ensure we only have whole numbers from 0 to 999 we can round down using Math.floor().
+const registeredEarly = true;
 
-const registeredEarly = false;
-
-const age = 20;
+const age = 18;
 
 if ( registeredEarly && age > 18 ){
   raceNumber += 1000;
 } 
 
-if ( registeredEarly && age > 18 ); {
+if ( registeredEarly && age > 18 ) {
   console.log(`Runner race number: ${raceNumber}, your race will start at 9:30am.`);
 } 
 else if ( !registeredEarly && age > 18) {
@@ -33,6 +30,7 @@ else if ( !registeredEarly && age > 18) {
 }
 else if ( age < 18 ) {
   console.log(`Runner race number ${raceNumber}, your race will start at 12:30am.`);
+} 
+else{
+  console.log('Please visit registration desk, thank you.');
 }
-
-// else if isnt working 
