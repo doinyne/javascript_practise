@@ -6,5 +6,7 @@ const textInput = document.querySelector('input');
 
 button.addEventListener('click', () => {
   let newInput = textInput.value;
-  getGithubRepo(newInput);
+  getGithubRepo(newInput, (data) => {
+    view(data);
+  });
 });
