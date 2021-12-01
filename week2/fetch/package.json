@@ -1,5 +1,5 @@
 {
-  "name": "bundle_exercise_3",
+  "name": "fetch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,10 @@
     "build": "esbuild index.js --bundle --outfile=bundle.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^27.4.2"
+    "jest": "^27.4.3"
   }
 }

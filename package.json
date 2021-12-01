@@ -19,7 +19,7 @@
   "homepage": "https://github.com/doinyne/javascript_practise#readme",
   "dependencies": {
     "got": "^11.8.3",
-    "jest": "^27.3.1",
+    "jest": "^27.4.2",
     "readline-sync": "^1.4.10"
   }
 }
