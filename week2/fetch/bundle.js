@@ -17,11 +17,11 @@
   var require_view = __commonJS({
     "view.js"(exports, module) {
       var view2 = (data) => {
-        let repoName = document.querySelector("repoName");
-        let repoImage = document.querySelector("repoImage");
-        let repoLink = document.querySelector("repoLink");
-        let repoDescription = document.querySelector("repoDescription");
-        let repoLanguage = document.querySelector("repoLanguage");
+        let repoName = document.querySelector("#repoName");
+        let repoImage = document.querySelector("#repoImage");
+        let repoLink = document.querySelector("#repoLink");
+        let repoDescription = document.querySelector("#repoDescription");
+        let repoLanguage = document.querySelector("#repoLanguage");
         repoName.innerText = data.full_name;
         repoImage.src = data.owner.avatar_url;
         repoLink.setAttribute("href", data.html_url);
@@ -36,7 +36,7 @@
   var getGithubRepo = require_getGithubRepo();
   var view = require_view();
   var button = document.querySelector("#add-post-btn");
-  var textInput = document.querySelector("input");
+  var textInput = document.querySelector("#input");
   button.addEventListener("click", () => {
     let newInput = textInput.value;
     getGithubRepo(newInput, (data) => {

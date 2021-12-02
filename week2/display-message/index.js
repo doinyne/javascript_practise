@@ -1,4 +1,4 @@
-const button = document.querySelector('#button');
+// const button = document.querySelector('#button');
 const paragraph = document.querySelector('#message');
 
 button.addEventListener('click', () => {
