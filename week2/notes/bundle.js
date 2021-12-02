@@ -33,15 +33,44 @@
     }
   });
 
+  // updateHtml.js
+  var require_updateHtml = __commonJS({
+    "updateHtml.js"(exports, module) {
+      var updateHtml2 = () => {
+        fetch("http://localhost:3000/notes").then((response) => response.json()).then((data) => {
+          data.forEach((item) => {
+            const note = document.createElement("p");
+            note.innerText = item.title;
+            note.innerText = item.content;
+            document.body.append(note);
+          });
+        });
+      };
+      module.exports = updateHtml2;
+    }
+  });
+
   // index.js
   var addNewNote = require_addNewNote();
   var getNotesContents = require_getNotesContents();
+  var updateHtml = require_updateHtml();
   getNotesContents();
   var button = document.querySelector("#button");
   var textInput = document.querySelector("#input");
+  updateHtml();
   button.addEventListener("click", () => {
     let newInput = textInput.value;
-    console.log(newInput);
-    addNewNote(newInput);
+    let contentTest = "Hello This is a test";
+    let data = {
+      title: newInput,
+      content: contentTest
+    };
+    fetch("http://localhost:3000/notes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }).then((response) => response.json());
   });
 })();
