@@ -6,15 +6,16 @@ getNotesContents();
 
 const button = document.querySelector("#button");
 const textInput = document.querySelector("#input");
+const textContent = document.querySelector("#content")
 
 updateHtml();
 
 button.addEventListener("click", () => {
   let newInput = textInput.value;
-  let contentTest = "Hello This is a test";
+  let newContent = textContent.value;
   let data = {
     title: newInput,
-    content: contentTest,
+    content: newContent,
   };
 
   fetch("http://localhost:3000/notes", {

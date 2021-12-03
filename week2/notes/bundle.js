@@ -6,7 +6,7 @@
   // addNewNote.js
   var require_addNewNote = __commonJS({
     "addNewNote.js"(exports, module) {
-      var addNewNote2 = (title) => {
+      var addNewNote2 = (title, content) => {
         const newNoteEl = document.createElement("div");
         const newId = document.querySelectorAll(".post").length + 1;
         newNoteEl.innerText = title;
@@ -57,13 +57,14 @@
   getNotesContents();
   var button = document.querySelector("#button");
   var textInput = document.querySelector("#input");
+  var textContent = document.querySelector("#content");
   updateHtml();
   button.addEventListener("click", () => {
     let newInput = textInput.value;
-    let contentTest = "Hello This is a test";
+    let newContent = textContent.value;
     let data = {
       title: newInput,
-      content: contentTest
+      content: newContent
     };
     fetch("http://localhost:3000/notes", {
       method: "POST",
