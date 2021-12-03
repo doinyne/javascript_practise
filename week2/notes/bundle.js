@@ -6,7 +6,7 @@
   // addNewNote.js
   var require_addNewNote = __commonJS({
     "addNewNote.js"(exports, module) {
-      var addNewNote2 = (title, content) => {
+      var addNewNote2 = (title) => {
         const newNoteEl = document.createElement("div");
         const newId = document.querySelectorAll(".post").length + 1;
         newNoteEl.innerText = title;
@@ -40,9 +40,10 @@
         fetch("http://localhost:3000/notes").then((response) => response.json()).then((data) => {
           data.forEach((item) => {
             const note = document.createElement("p");
-            note.innerText = item.title;
-            note.innerText = item.content;
-            document.body.append(note);
+            note.class = "note";
+            note.href = "note.html";
+            note.innerText = `${item.title}: ${item.content}`;
+            document.body.appendChild(note);
           });
         });
       };

@@ -1,4 +1,4 @@
-const addNewNote = (title, content) => {
+const addNewNote = (title) => {
   const newNoteEl = document.createElement('div');
   // calculate the new number for the html ID
   const newId = document.querySelectorAll('.post').length + 1;
@@ -7,7 +7,6 @@ const addNewNote = (title, content) => {
   newNoteEl.className = 'post';
   newNoteEl.id = 'post-' + newId;
   document.body.appendChild(newNoteEl);
-  
 }
 
 module.exports = addNewNote;

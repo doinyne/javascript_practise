@@ -3,8 +3,7 @@ const getNotesContents = () => {
   const contents = [];
   elements.forEach(element => {
     contents.push(element.innerText);
-  });
-
+  }); 
   return contents;
 }
 

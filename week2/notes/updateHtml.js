@@ -4,9 +4,10 @@ const updateHtml = () => {
     .then((data) => {
       data.forEach((item) => {
         const note = document.createElement("p");
-        note.innerText = item.title;
-        note.innerText = item.content;
-        document.body.append(note);
+        note.class = "note";
+        note.href = "note.html";
+        note.innerText = `${item.title}: ${item.content}`;
+        document.body.appendChild(note);
       });
     });
 };
